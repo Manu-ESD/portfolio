@@ -1,0 +1,35 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+.mainpadding {
+    padding-top: 1rem!important;
+}
+
+.nav-font-size{
+    font-size: small;
+    padding-right:24px;
+    padding-left:24px;
+    
+}
+
+.profilePic{
+    height:70vh;
+} 
+
+body{
+    background-color: #e9e7e7;
+}
+
+img{
+    z-index: -100;
+    opacity: 100%;
+}
+
+.change-nav{
+  background-color: #6aabc5 !important ;
+}
+
+.nav-color{
+    color:#6aabc5 !important;
+}

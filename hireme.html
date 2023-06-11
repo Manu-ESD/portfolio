@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<!--6B3ADCF755ACFB3ABBE6E4A3EEF146A616A1-->
+<!--"cwhgiuzynuyqggtw"-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hireme</title>
+    <style>
+      body {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        height: 100vh;
+        background-color: brown;
+      }
+      .form {
+        width: 500px;
+        padding: 6px;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 6px;
+        outline: none;
+        border: none;
+        margin: 6px 0px;
+      }
+      #btn {
+        width: 150px;
+        padding: 6px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <form>
+        <input type="text" placeholder="Name" id="name" autocomplete="off" />
+        <input type="email" placeholder="Email" id="email" autocomplete="off" />
+        <input
+          type="text"
+          placeholder="Subject"
+          id="subject"
+          autocomplete="off"
+        />
+        <textarea
+          id="message"
+          placeholder="Message"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <button id="btn">Send</button>
+      </form>
+    </div>
+  </body>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    var btn = document.getElementById('btn');
+    btn.addEventListener("click", function (e) {
+      e.preventDefault()
+      var name = document.getElementById('name').value;
+      var email = document.getElementById("email").value;
+      var subject = document.getElementById("subject").value;
+      var message = document.getElementById("message").value;
+      var body =
+        "name: " +
+        name +
+        "<br/> email: " +
+        email +
+        "<br/> subject: " +
+        subject +
+        "<br/> message: " +
+        message;
+
+      Email.send({
+        Host: "smtp.elasticemail.com",
+        Username: "g.v.manohar3@gmail.com",
+        Password: "6B3ADCF755ACFB3ABBE6E4A3EEF146A616A1",
+        To: "g.v.manohar3@gmail.com",
+        From: email,
+        Subject: subject,
+        Body: body,
+      }).then(message => {
+    alert("mail sent successfully");
+    console.log(message);
+  });
+    });
+  </script>
+</html>
